@@ -1,0 +1,96 @@
+@echo off
+:menu
+cls
+title Temporizador de Apagado
+echo.
+echo.
+echo               15(Minutos)
+echo               30(Minutos)
+echo               45(Minutos)
+echo                1(Hora)
+echo.
+echo.
+echo s-Suspender
+echo.
+set /p var=
+if %var%==1  goto :a
+if %var%==15 goto :b
+if %var%==30 goto :c
+if %var%==45 goto :d
+if %var%==s  goto :e
+if %var% gtr 46 echo error
+goto :menu
+:e
+shutdown -a
+exit
+:a
+cls
+echo v-Volver 
+echo s-suspender
+shutdown -s -f -t 3600 -c "Se Apagara en 1Hora"
+set /p wow=
+if %wow%==v goto :volver
+if %wow%==s goto :suspender
+pause
+exit
+:volver
+cls
+goto :menu
+:suspender
+cls
+shutdown -a
+exit
+:b
+cls
+echo v-Volver 
+echo s-suspender
+shutdown -s -f -t 900 -c "Se Apagara en 15Minutos"
+set /p wow=
+if %wow%==v goto :volver
+if %wow%==s goto :suspender
+pause
+:volver
+cls
+goto :menu
+:suspender
+cls
+shutdown -a
+exit
+:c
+cls
+echo v-Volver 
+echo s-suspender
+shutdown -s -f -t 1800 -c "Se Apagara en 30Minutos"
+set /p wow=
+if %wow%==v goto :volver
+if %wow%==s goto :suspender
+pause
+exit
+:volver
+cls
+goto :menu
+:suspender
+cls
+shutdown -a
+exit
+:d
+cls
+echo v-Volver 
+echo s-suspender
+shutdown -s -f -t 2700 -c "Se Apagara en 45Minutos"
+set /p wow=
+if %wow%==v goto :volver
+if %wow%==s goto :suspender
+pause
+exit
+:volver
+cls
+goto :menu
+:suspender
+cls
+shutdown -a
+exit
+:a
+cls
+echo v-Volver 
+echo s-suspender

