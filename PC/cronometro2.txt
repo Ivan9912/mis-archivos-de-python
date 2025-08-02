@@ -1,0 +1,43 @@
+@echo off
+title Temporizador de Apagado
+color 0A
+:menu
+cls
+echo ==============================
+echo     Temporizador de Apagado
+echo ==============================
+echo.
+echo  1 - Apagar en 1 hora
+echo 15 - Apagar en 15 minutos
+echo 30 - Apagar en 30 minutos
+echo 45 - Apagar en 45 minutos
+echo  s - Cancelar apagado
+echo  x - Salir
+echo.
+set /p opt=Elegí una opción: 
+
+if "%opt%"=="1"  set /a t=3600 & goto :confirmar
+if "%opt%"=="15" set /a t=900  & goto :confirmar
+if "%opt%"=="30" set /a t=1800 & goto :confirmar
+if "%opt%"=="45" set /a t=2700 & goto :confirmar
+if /i "%opt%"=="s" shutdown -a & echo Apagado cancelado. & pause & goto :menu
+if /i "%opt%"=="x" exit
+
+echo Opción inválida.
+pause
+goto :menu
+
+:confirmar
+cls
+echo Se programará el apagado en %t% segundos.
+echo.
+echo [S] Confirmar y programar apagado
+echo [C] Cancelar y volver al menú
+set /p ok=¿Confirmar (S/C)? 
+if /i "%ok%"=="s" (
+    shutdown -s -f -t %t% -c "Se apagará en %t% segundos"
+    echo Apagado programado.
+    pause
+    exit
+)
+goto :menu
