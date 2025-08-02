@@ -35,7 +35,7 @@ echo [S] Confirmar y programar apagado
 echo [C] Cancelar y volver al menú
 set /p ok=¿Confirmar (S/C)? 
 if /i "%ok%"=="s" (
-    shutdown -s -f -t %t% -c "Se apagará en %t% segundos"
+    shutdown -s -f -t %t% -c "Se apagará en %t% segundos" 
     echo Apagado programado.
     pause
     exit
